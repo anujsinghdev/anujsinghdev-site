@@ -130,15 +130,22 @@ const { selectedItem } = Astro.props;
 
   <script>
     import { setupNav } from '../scripts/nav.js';
+    import { setupScrollRestore } from '../scripts/scroll-restore.js';
     
-    let cleanup;
+    let cleanupNav;
+    let cleanupScroll;
+
     document.addEventListener('astro:page-load', () => {
-      if (cleanup) cleanup();
-      cleanup = setupNav();
+      if (cleanupNav) cleanupNav();
+      if (cleanupScroll) cleanupScroll();
+      
+      cleanupNav = setupNav();
+      cleanupScroll = setupScrollRestore();
     });
 
     document.addEventListener('astro:before-swap', () => {
-      if (cleanup) cleanup();
+      if (cleanupNav) cleanupNav();
+      if (cleanupScroll) cleanupScroll();
     });
   </script>
 </aside>
