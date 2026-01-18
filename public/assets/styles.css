@@ -125,20 +125,6 @@ ul {
   }
 }
 
-.w-richtext:before,
-.w-richtext:after {
-  content: ' ';
-  grid-area: 1 / 1 / 2 / 2;
-  display: table;
-}
-
-.w-richtext:after {
-  clear: both;
-}
-
-.w-richtext ul {
-  overflow: hidden;
-}
 
 .w-nav {
   z-index: 1000;
@@ -181,7 +167,6 @@ ul {
   float: right;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -384,54 +369,10 @@ p {
   line-height: 24px;
 }
 
-.mini-label-white.gray-color {
-  color: #a8a8a8;
-}
-
-.chips-container {
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-top: 8px;
-  display: flex;
-}
-
-.chips-container.chips-container-small-width {
-  max-width: 380px;
-}
-
-.single-chip {
-  color: #fff;
-  background-color: #353535;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-family: IBM Plex Mono, sans-serif;
-}
-
-.single-chip.small-chip {
-  padding: 4px 8px;
-  font-size: 12px;
-}
-
-.single-item {
-  font-size: 16px;
-}
-
-.resouce-items {
-  grid-column-gap: 64px;
-  grid-row-gap: 64px;
-  flex-direction: column;
-  display: flex;
-}
-
-.items-container {
-  flex-direction: column;
-}
-
 .nav-link-image {
   width: 24px;
   opacity: 0.48;
+  filter: brightness(0) invert(1);
 }
 
 .nav-link-container {
@@ -681,61 +622,6 @@ p {
   --compose-blue: #4285F4;
 }
 
-/* Profile Avatar */
-.profile-avatar {
-  width: 48px;
-  height: 48px;
-  background: var(--android-gradient);
-  border-radius: 100px;
-  margin-right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid rgba(61, 220, 132, 0.3);
-}
-
-.avatar-initials {
-  color: #161616;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* Social Links */
-.social-links {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  margin-top: auto;
-}
-
-.social-link {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #a8a8a8;
-  border: 1px solid #353535;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.social-link:hover {
-  color: var(--android-green);
-  border-color: var(--android-green);
-  background-color: rgba(61, 220, 132, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Android Chip Highlight */
-.single-chip.android-chip {
-  background: var(--android-gradient);
-  color: #161616;
-  font-weight: 600;
-}
-
 /* Android Gradient Container */
 .projects-category-image-container.android-gradient {
   background: linear-gradient(135deg, rgba(61, 220, 132, 0.15) 0%, rgba(46, 204, 113, 0.1) 100%);
@@ -757,13 +643,6 @@ p {
   filter: brightness(0) saturate(100%) invert(52%) sepia(83%) saturate(1195%) hue-rotate(359deg) brightness(101%) contrast(105%);
 }
 
-/* Blog Chip Highlight */
-.single-chip.blog-chip {
-  background: linear-gradient(135deg, #FF6719 0%, #FF8C42 100%);
-  color: #fff;
-  font-weight: 600;
-}
-
 /* Skills Gradient Container */
 .projects-category-image-container.skills-gradient {
   background: linear-gradient(135deg, rgba(127, 82, 255, 0.15) 0%, rgba(66, 133, 244, 0.1) 100%);
@@ -772,13 +651,6 @@ p {
 
 .projects-category-image-container.skills-gradient img {
   filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%) hue-rotate(227deg) brightness(99%) contrast(105%);
-}
-
-/* Skills Chip Highlight */
-.single-chip.skills-chip {
-  background: linear-gradient(135deg, #7F52FF 0%, #4285F4 100%);
-  color: #fff;
-  font-weight: 600;
 }
 
 /* Button Variants */
@@ -877,4 +749,32 @@ p {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Contact Gradient Container */
+.projects-category-image-container.contact-gradient {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(63, 186, 178, 0.1) 100%);
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.projects-category-image-container.contact-gradient img {
+  filter: brightness(0) saturate(100%) invert(73%) sepia(42%) saturate(529%) hue-rotate(127deg) brightness(94%) contrast(88%);
+}
+
+/* Section Summary for Home Page */
+.section-summary {
+  color: #a8a8a8;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 8px 0 0 0;
+}
+
+/* Video/YouTube Gradient Container */
+.projects-category-image-container.video-gradient {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.15) 0%, rgba(200, 0, 0, 0.1) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.projects-category-image-container.video-gradient img {
+  filter: brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(7500%) hue-rotate(359deg) brightness(95%) contrast(115%);
 }

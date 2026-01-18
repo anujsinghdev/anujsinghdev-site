@@ -14,9 +14,7 @@ const { selectedItem } = Astro.props;
   <div class="nav-content">
     <a href="/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
-        <div class="profile-avatar">
-          <span class="avatar-initials">AS</span>
-        </div>
+        <img src="/assets/hero.jpg" alt="Anuj Singh" class="niv-image" />
         <div>
           <div class="label-white">Anuj Singh</div>
           <div class="label-gray">Android Developer</div>
@@ -54,7 +52,7 @@ const { selectedItem } = Astro.props;
           alt=""
           class="nav-link-image"
         />
-        <div>Open Source</div>
+        <div>Projects</div>
       </a>
       <a
         href="/skills"
@@ -83,6 +81,20 @@ const { selectedItem } = Astro.props;
           class="nav-link-image"
         />
         <div>Blogs</div>
+      </a>
+      <a
+        href="/videos"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'videos' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/youtube.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Videos</div>
       </a>
       <a
         href="/contact"

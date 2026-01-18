@@ -5,39 +5,133 @@ import Sidebar from "../components/Sidebar.astro";
 const skillCategories = [
   {
     title: "Languages & Frameworks",
-    skills: ["Kotlin", "Java", "Jetpack Compose", "XML Layouts", "Kotlin Multiplatform (KMP)"]
+    icon: "🚀",
+    color: "android",
+    description: "Core languages and UI frameworks",
+    skills: [
+      { name: "Kotlin", highlight: true },
+      { name: "Java", highlight: false },
+      { name: "Jetpack Compose", highlight: true },
+      { name: "XML Layouts", highlight: false }
+    ]
+  },
+  {
+    title: "Multiplatform",
+    icon: "🌐",
+    color: "multiplatform",
+    description: "Cross-platform development",
+    skills: [
+      { name: "Kotlin Multiplatform (KMP)", highlight: true },
+      { name: "Compose Multiplatform (CMP)", highlight: true },
+      { name: "Shared Business Logic", highlight: false },
+      { name: "iOS Integration", highlight: false }
+    ]
   },
   {
     title: "Architecture & Patterns",
-    skills: ["MVVM", "Clean Architecture", "Repository Pattern", "Use Cases", "MVI"]
+    icon: "🏗️",
+    color: "skills",
+    description: "Clean code and design patterns",
+    skills: [
+      { name: "Clean Architecture", highlight: true },
+      { name: "MVVM", highlight: false },
+      { name: "MVI", highlight: false },
+      { name: "Repository Pattern", highlight: false },
+      { name: "Use Cases", highlight: false }
+    ]
   },
   {
     title: "Android Jetpack",
-    skills: ["Navigation", "Room", "DataStore", "WorkManager", "Paging 3", "ViewModel", "LiveData", "Lifecycle"]
+    icon: "📦",
+    color: "android",
+    description: "Official Android libraries",
+    skills: [
+      { name: "Navigation", highlight: false },
+      { name: "Room", highlight: false },
+      { name: "DataStore", highlight: false },
+      { name: "WorkManager", highlight: false },
+      { name: "Paging 3", highlight: false },
+      { name: "ViewModel", highlight: true },
+      { name: "Lifecycle", highlight: false }
+    ]
   },
   {
     title: "Dependency Injection",
-    skills: ["Hilt", "Dagger 2", "Koin"]
+    icon: "💉",
+    color: "skills",
+    description: "DI frameworks and patterns",
+    skills: [
+      { name: "Hilt", highlight: true },
+      { name: "Dagger 2", highlight: false },
+      { name: "Koin", highlight: false }
+    ]
   },
   {
     title: "Networking & Data",
-    skills: ["Retrofit", "OkHttp", "Ktor", "Moshi", "Gson", "REST APIs", "GraphQL"]
+    icon: "🌍",
+    color: "blog",
+    description: "API integration and data handling",
+    skills: [
+      { name: "Retrofit", highlight: true },
+      { name: "OkHttp", highlight: false },
+      { name: "Ktor", highlight: true },
+      { name: "Moshi", highlight: false },
+      { name: "REST APIs", highlight: false },
+      { name: "GraphQL", highlight: false }
+    ]
   },
   {
     title: "Async Programming",
-    skills: ["Coroutines", "Flow", "StateFlow", "SharedFlow", "Channels"]
+    icon: "⚡",
+    color: "android",
+    description: "Reactive and concurrent programming",
+    skills: [
+      { name: "Coroutines", highlight: true },
+      { name: "Flow", highlight: true },
+      { name: "StateFlow", highlight: false },
+      { name: "SharedFlow", highlight: false },
+      { name: "Channels", highlight: false }
+    ]
   },
   {
     title: "Testing",
-    skills: ["JUnit", "Mockito", "MockK", "Espresso", "UI Automator", "Compose Testing"]
+    icon: "🧪",
+    color: "skills",
+    description: "Quality assurance and testing",
+    skills: [
+      { name: "JUnit", highlight: false },
+      { name: "MockK", highlight: true },
+      { name: "Espresso", highlight: false },
+      { name: "Compose Testing", highlight: true },
+      { name: "UI Automator", highlight: false }
+    ]
   },
   {
     title: "Tools & DevOps",
-    skills: ["Android Studio", "Gradle", "Git", "GitHub Actions", "Firebase", "Play Console"]
+    icon: "🛠️",
+    color: "blog",
+    description: "Development and deployment tools",
+    skills: [
+      { name: "Android Studio", highlight: true },
+      { name: "Gradle", highlight: false },
+      { name: "Git", highlight: false },
+      { name: "GitHub Actions", highlight: true },
+      { name: "Firebase", highlight: false },
+      { name: "Play Console", highlight: false }
+    ]
   },
   {
-    title: "UI/UX",
-    skills: ["Material Design 3", "Animations", "Custom Views", "Accessibility", "Dark Mode"]
+    title: "UI/UX Design",
+    icon: "🎨",
+    color: "contact",
+    description: "User interface and experience",
+    skills: [
+      { name: "Material Design 3", highlight: true },
+      { name: "Animations", highlight: true },
+      { name: "Custom Views", highlight: false },
+      { name: "Accessibility", highlight: false },
+      { name: "Dark Mode", highlight: false }
+    ]
   }
 ];
 ---
@@ -57,17 +151,25 @@ const skillCategories = [
             </a>
           </div>
           <div class="content-container">
-            <h1>Skills & Technologies</h1>
-            <p class="page-subtitle">My technical expertise in Android development and related technologies.</p>
-            <section class="skills-grid">
+            <div class="skills-header">
+              <h1>Skills & Technologies</h1>
+              <p class="page-subtitle">My technical expertise in Android development and modern cross-platform technologies.</p>
+            </div>
+            <section class="skills-grid-enhanced">
               {skillCategories.map(category => (
-                <div class="skill-category">
-                  <h4>{category.title}</h4>
-                  <div class="chips-container">
+                <div class={`skill-card skill-card-${category.color}`}>
+                  <div class="skill-card-header">
+                    <span class="skill-icon">{category.icon}</span>
+                    <div class="skill-card-titles">
+                      <h4>{category.title}</h4>
+                      <span class="skill-description">{category.description}</span>
+                    </div>
+                  </div>
+                  <div class="skill-tags">
                     {category.skills.map(skill => (
-                      <div class={`single-chip ${skill === 'Kotlin' || skill === 'Jetpack Compose' ? 'android-chip' : ''}`}>
-                        {skill}
-                      </div>
+                      <span class={`skill-tag ${skill.highlight ? `skill-tag-${category.color}` : ''}`}>
+                        {skill.name}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -79,3 +181,200 @@ const skillCategories = [
     </div>
   </body>
 </html>
+
+<style>
+  .skills-header {
+    margin-bottom: 48px;
+  }
+
+  .skills-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+    background: rgba(53, 53, 53, 0.3);
+    border: 1px solid #353535;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--android-green);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: #a8a8a8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .skills-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .skill-card {
+    background: rgba(28, 28, 28, 0.8);
+    border: 1px solid #353535;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--android-green), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(61, 220, 132, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .skill-card:hover::before {
+    opacity: 1;
+  }
+
+  .skill-card-android::before {
+    background: linear-gradient(90deg, var(--android-green), transparent);
+  }
+
+  .skill-card-skills::before {
+    background: linear-gradient(90deg, var(--kotlin-purple), transparent);
+  }
+
+  .skill-card-blog::before {
+    background: linear-gradient(90deg, #FF6719, transparent);
+  }
+
+  .skill-card-contact::before {
+    background: linear-gradient(90deg, #4ECDC4, transparent);
+  }
+
+  .skill-card-multiplatform::before {
+    background: linear-gradient(90deg, #E24462, transparent);
+  }
+
+  .skill-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .skill-icon {
+    font-size: 32px;
+    line-height: 1;
+    filter: grayscale(0);
+  }
+
+  .skill-card-titles {
+    flex: 1;
+  }
+
+  .skill-card-titles h4 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .skill-description {
+    font-size: 13px;
+    color: #888;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-tag {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+    background: rgba(53, 53, 53, 0.5);
+    color: #a8a8a8;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .skill-tag:hover {
+    background: rgba(53, 53, 53, 0.8);
+    color: #fff;
+  }
+
+  .skill-tag-android {
+    background: rgba(61, 220, 132, 0.15);
+    color: var(--android-green);
+    border-color: rgba(61, 220, 132, 0.3);
+  }
+
+  .skill-tag-skills {
+    background: rgba(127, 82, 255, 0.15);
+    color: var(--kotlin-purple);
+    border-color: rgba(127, 82, 255, 0.3);
+  }
+
+  .skill-tag-blog {
+    background: rgba(255, 103, 25, 0.15);
+    color: #FF6719;
+    border-color: rgba(255, 103, 25, 0.3);
+  }
+
+  .skill-tag-contact {
+    background: rgba(78, 205, 196, 0.15);
+    color: #4ECDC4;
+    border-color: rgba(78, 205, 196, 0.3);
+  }
+
+  .skill-tag-multiplatform {
+    background: rgba(226, 68, 98, 0.15);
+    color: #E24462;
+    border-color: rgba(226, 68, 98, 0.3);
+  }
+
+  @media screen and (max-width: 767px) {
+    .skills-grid-enhanced {
+      grid-template-columns: 1fr;
+    }
+
+    .skills-stats {
+      gap: 16px;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 80px;
+      padding: 12px 16px;
+    }
+
+    .stat-number {
+      font-size: 22px;
+    }
+  }
+</style>
