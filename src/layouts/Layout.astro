@@ -18,6 +18,10 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<script>
+			import { setupScrollRestore } from '../scripts/scroll-restore.js';
+			setupScrollRestore();
+		</script>
 	</body>
 </html>
 <style is:global>
