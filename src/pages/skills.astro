@@ -1,0 +1,81 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const skillCategories = [
+  {
+    title: "Languages & Frameworks",
+    skills: ["Kotlin", "Java", "Jetpack Compose", "XML Layouts", "Kotlin Multiplatform (KMP)"]
+  },
+  {
+    title: "Architecture & Patterns",
+    skills: ["MVVM", "Clean Architecture", "Repository Pattern", "Use Cases", "MVI"]
+  },
+  {
+    title: "Android Jetpack",
+    skills: ["Navigation", "Room", "DataStore", "WorkManager", "Paging 3", "ViewModel", "LiveData", "Lifecycle"]
+  },
+  {
+    title: "Dependency Injection",
+    skills: ["Hilt", "Dagger 2", "Koin"]
+  },
+  {
+    title: "Networking & Data",
+    skills: ["Retrofit", "OkHttp", "Ktor", "Moshi", "Gson", "REST APIs", "GraphQL"]
+  },
+  {
+    title: "Async Programming",
+    skills: ["Coroutines", "Flow", "StateFlow", "SharedFlow", "Channels"]
+  },
+  {
+    title: "Testing",
+    skills: ["JUnit", "Mockito", "MockK", "Espresso", "UI Automator", "Compose Testing"]
+  },
+  {
+    title: "Tools & DevOps",
+    skills: ["Android Studio", "Gradle", "Git", "GitHub Actions", "Firebase", "Play Console"]
+  },
+  {
+    title: "UI/UX",
+    skills: ["Material Design 3", "Animations", "Custom Views", "Accessibility", "Dark Mode"]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Skills | Anuj Singh" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="skills" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Skills & Technologies</h1>
+            <p class="page-subtitle">My technical expertise in Android development and related technologies.</p>
+            <section class="skills-grid">
+              {skillCategories.map(category => (
+                <div class="skill-category">
+                  <h4>{category.title}</h4>
+                  <div class="chips-container">
+                    {category.skills.map(skill => (
+                      <div class={`single-chip ${skill === 'Kotlin' || skill === 'Jetpack Compose' ? 'android-chip' : ''}`}>
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

@@ -3,11 +3,9 @@ import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
 ---
 
-
 <!DOCTYPE html>
-<html
->
-  <Header title="Sam Bernstein" />
+<html>
+  <Header title="Anuj Singh - Android Developer" />
   <body>
     <div class="content">
       <Sidebar selectedItem="home" />
@@ -15,67 +13,86 @@ import Sidebar from "../components/Sidebar.astro";
         <div class="container">
           <main class="fold-content-container">
             <div class="fold-content">
-              <h1>Hi, I'm Sam.<br />I build things for the web.</h1>
+              <h1>Hi, I'm Anuj.<br />I build Android apps that scale.</h1>
               <p class="lead">
-                Experienced backend developer and cloud architect. A proactive team member dedicated to continuous learning, problem-solving, and aiding teammates in achieving quicker outcomes.
+                I'm an Android developer passionate about crafting beautiful, performant mobile experiences using Kotlin and Jetpack Compose. I specialize in building scalable apps with clean architecture, modern UI/UX, and robust testing practices.
               </p>
             </div>
-            <a href="mailto:sam@overview.co.il	" class="button w-button">Contact</a>
+            <div class="cta-buttons">
+              <a href="/contact" class="button w-button">Get in Touch</a>
+              <a href="https://github.com/anujsinghdev" target="_blank" rel="noopener noreferrer" class="button button-outline w-button">View GitHub</a>
+            </div>
           </main>
           <div class="projects-section">
-            <!-- Software Development -->
-            <a href="/software-development" class="projects-container">
+            <!-- Open Source Projects -->
+            <a href="/projects" class="projects-container">
               <div class="single-projects-category">
-                <div class="projects-category-image-container">
-                  <img src="./assets/browser.svg" loading="lazy" alt="" class="projects-category-image" />
+                <div class="projects-category-image-container android-gradient">
+                  <img src="./assets/android.svg" loading="lazy" alt="" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
-                <h4>Software Development</h4>
+                <h4>Open Source</h4>
                 <div class="tech-tools-container">
                   <div class="mini-label-white gray-color">Technologies &amp; tools</div>
                   <div class="chips-container chips-container-small-width">
-                    <div class="single-chip small-chip">React</div>
-                    <div class="single-chip small-chip">Next.js</div>
-                    <div class="single-chip small-chip">Node.js</div>
-                    <div class="single-chip small-chip">MongoDB</div>
-                    <div class="single-chip small-chip">Heroku</div>
-                    <div class="single-chip small-chip">RabbitMQ</div>
-                    <div class="single-chip small-chip">Express.js</div>
-                    <div class="single-chip small-chip">TypeScript</div>
-                    <div class="single-chip small-chip">NestJS</div>
-                    <div class="single-chip small-chip">Angular</div>
-                    <div class="single-chip small-chip">Postgres</div>
-                    <div class="single-chip small-chip">Linode</div>
+                    <div class="single-chip small-chip android-chip">Kotlin</div>
+                    <div class="single-chip small-chip android-chip">Jetpack Compose</div>
+                    <div class="single-chip small-chip">MVVM</div>
+                    <div class="single-chip small-chip">Room</div>
+                    <div class="single-chip small-chip">Retrofit</div>
+                    <div class="single-chip small-chip">Hilt</div>
+                    <div class="single-chip small-chip">Coroutines</div>
+                    <div class="single-chip small-chip">Flow</div>
+                    <div class="single-chip small-chip">Material 3</div>
+                    <div class="single-chip small-chip">Navigation</div>
                   </div>
                 </div>
               </div>
             </a>
-            <!-- DevOps & Cloud -->
-            <a href="/devops" class="projects-container">
+            <!-- Skills & Tools -->
+            <a href="/skills" class="projects-container">
               <div class="single-projects-category">
-                <div class="projects-category-image-container devops-img">
-                  <img src="./assets/database.svg" loading="lazy" alt="" class="projects-category-image" />
+                <div class="projects-category-image-container skills-gradient">
+                  <img src="./assets/code.svg" loading="lazy" alt="" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
-                <h4>DevOps &amp;&nbsp;Cloud</h4>
+                <h4>Skills &amp; Tools</h4>
                 <div class="tech-tools-container">
-                  <div class="mini-label-white gray-color">Technologies &amp; tools</div>
+                  <div class="mini-label-white gray-color">Core competencies</div>
                   <div class="chips-container chips-container-small-width">
-                    <div class="single-chip small-chip">Terraform</div>
-                    <div class="single-chip small-chip">Azure</div>
-                    <div class="single-chip small-chip">AWS</div>
-                    <div class="single-chip small-chip">Docker</div>
-                    <div class="single-chip small-chip">Kubernetes</div>
-                    <div class="single-chip small-chip">GitLab CI/CD</div>
-                    <div class="single-chip small-chip">RKE</div>
-                    <div class="single-chip small-chip">Node.js</div>
-                    <div class="single-chip small-chip">RabbitMQ</div>
-                    <div class="single-chip small-chip">Linux</div>
-                    <div class="single-chip small-chip">Bash</div>
-                    <div class="single-chip small-chip">Grafana</div>
-                    <div class="single-chip small-chip">Prometheus</div>
+                    <div class="single-chip small-chip skills-chip">Clean Architecture</div>
+                    <div class="single-chip small-chip skills-chip">Unit Testing</div>
+                    <div class="single-chip small-chip">UI Testing</div>
+                    <div class="single-chip small-chip">Git</div>
+                    <div class="single-chip small-chip">CI/CD</div>
+                    <div class="single-chip small-chip">Firebase</div>
+                    <div class="single-chip small-chip">REST APIs</div>
+                    <div class="single-chip small-chip">Gradle</div>
+                    <div class="single-chip small-chip">Android Studio</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Blogs -->
+            <a href="/blogs" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container blog-gradient">
+                  <img src="./assets/blog.svg" loading="lazy" alt="" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Blogs</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Latest articles</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip blog-chip">Android</div>
+                    <div class="single-chip small-chip blog-chip">Kotlin</div>
+                    <div class="single-chip small-chip">Jetpack Compose</div>
+                    <div class="single-chip small-chip">Architecture</div>
+                    <div class="single-chip small-chip">Best Practices</div>
+                    <div class="single-chip small-chip">Tutorials</div>
                   </div>
                 </div>
               </div>
@@ -84,7 +101,5 @@ import Sidebar from "../components/Sidebar.astro";
         </div>
       </nav>
     </div>
-
-    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
   </body>
 </html>

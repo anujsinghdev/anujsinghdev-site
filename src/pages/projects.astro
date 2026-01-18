@@ -1,0 +1,75 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+    title: "Calculator Pro",
+    desc: [
+      "iOS-style calculator with Jetpack Compose and Material 3 design",
+      "Haptic feedback and click sounds for enhanced UX",
+      "Expression history with Room database persistence",
+      "Copy/paste functionality and animated transitions",
+      "Haze glass effect buttons with blur styling"
+    ],
+    tech: ["Kotlin", "Jetpack Compose", "Room", "MVVM", "Coroutines", "Material 3"]
+  },
+  {
+    title: "Pomodoro Study",
+    desc: [
+      "Full-featured productivity app with gamification elements",
+      "Analytics dashboard with productivity scores and streak tracking",
+      "Foreground timer service with rich notifications",
+      "Achievement badges, XP system, and daily challenges",
+      "GitHub-style streak calendar and focus trends"
+    ],
+    tech: ["Kotlin", "Compose", "Hilt", "Flow", "WorkManager", "DataStore"]
+  },
+  {
+    title: "Flick International",
+    desc: [
+      "E-commerce app with complete checkout flow",
+      "Address management, payment methods, and order tracking",
+      "Clean architecture with repository pattern",
+      "Navigation component with deep linking support"
+    ],
+    tech: ["Kotlin", "Compose", "Navigation", "Hilt", "Retrofit", "MVVM"]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Open Source | Anuj Singh" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="projects" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Open Source Projects</h1>
+            <p class="page-subtitle">A showcase of my Android development work featuring modern Kotlin and Jetpack Compose applications.</p>
+            <section class="items-container">
+              <div class="resouce-items">
+                {projects.map(project => (
+                  <Project 
+                    title={project.title} 
+                    desc={project.desc}
+                    tech={project.tech}
+                  />
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
